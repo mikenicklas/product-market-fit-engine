@@ -13,6 +13,10 @@ class RecipientsController < BaseController
     end
   end
 
+  def index
+    @recipients = current_product.recipients
+  end
+
   private
 
   def recipient_params

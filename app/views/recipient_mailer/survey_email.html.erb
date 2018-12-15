@@ -1,0 +1,7 @@
+<p><%= @recipient.greeting %>,<br>
+We want to build the best possible tool for you. It would be really helpful if you would fill out this five question survey. We promise it'll only take five minutes.<br /><br />
+
+<%= link_to "Answer five minute suvey", new_survey_response_url(@recipient.survey_token) %><br /><br />
+
+Thanks!
+</p>
