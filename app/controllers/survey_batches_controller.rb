@@ -11,6 +11,7 @@ class SurveyBatchesController < BaseController
 
   private
 
+  # TODO: ugly
   def recipients_to_send_to
     @recipients_to_send_to ||= begin
       if params[:send_survey_ids].present?
