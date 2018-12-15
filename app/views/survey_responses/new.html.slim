@@ -1,10 +1,12 @@
-h1 Survey Response
-= bootstrap_form_for @survey_response, url: new_survey_response_path, method: :post do |f|
-  = f.form_group :disappointment, label: { text: "How would you feel if you could no longer #{@survey_response.recipient.product.name}?" } do
-    = f.radio_button :disappointment, 0, label: "Very disappointed"
-    = f.radio_button :disappointment, 1, label: "Somewhat disappointed"
-    = f.radio_button :disappointment, 2, label: "Not disappointed (it really isn't that useful)"
-  = f.text_area :ideal_customer, label: "What type of people do you think would most benefit from #{@survey_response.recipient.product.name}?", required: true
-  = f.text_area :main_benefits, label: "What is the main benefit you receive from #{@survey_response.recipient.product.name}?", required: true
-  = f.text_area :recommended_improvements, label: "How can we improve #{@survey_response.recipient.product.name} for you?", required: true
-  = f.submit "Submit survey", class: "btn btn-primary"
+.card.card--md
+  .card__header-container
+    h1.card__header Survey Response
+  = bootstrap_form_for @survey_response, url: new_survey_response_path, method: :post do |f|
+    = f.form_group :disappointment, label: { text: "How would you feel if you could no longer #{@survey_response.recipient.product.name}?" } do
+      = f.radio_button :disappointment, 0, label: "Very disappointed"
+      = f.radio_button :disappointment, 1, label: "Somewhat disappointed"
+      = f.radio_button :disappointment, 2, label: "Not disappointed (it really isn't that useful)"
+    = f.text_area :ideal_customer, label: "What type of people do you think would most benefit from #{@survey_response.recipient.product.name}?", required: true
+    = f.text_area :main_benefits, label: "What is the main benefit you receive from #{@survey_response.recipient.product.name}?", required: true
+    = f.text_area :recommended_improvements, label: "How can we improve #{@survey_response.recipient.product.name} for you?", required: true
+    = f.submit "Submit survey", class: "btn btn-primary"
