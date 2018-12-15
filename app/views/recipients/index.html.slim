@@ -1,0 +1,26 @@
+h1 Recipients
+
+= bootstrap_form_tag url: survey_batches_path, method: :post do |f|
+  = f.submit "Send survey batch", class: "btn btn-primary"
+  table#recipients-table.table
+    thead
+      tr
+        th &nbsp;
+        th First name
+        th Last name
+        th Email
+        th Status
+        th &nbsp;
+    tbody
+      - @recipients.each do |recipient|
+        tr
+          td
+            - if recipient.unsent?
+              = check_box_tag "send_survey_ids[]", recipient.id
+          td = recipient.first_name
+          td = recipient.last_name
+          td = recipient.email
+          td = recipient.status.to_s.titleize
+          td
+            - if recipient.completed?
+              = link_to "View response", survey_response_path(recipient.response)
