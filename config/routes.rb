@@ -4,6 +4,8 @@ Rails.application.routes.draw do
 
   resources :products, only: [:new, :create]
   resources :recipients, only: [:new, :create, :index]
-  resources :survey_responses, path: "survey", only: [:new, :create]
   resources :survey_batches, only: :create
+
+  get "survey/:token", to: "survey_responses#new", as: :new_survey_response
+  post "survey/:token", to: "survey_responses#create"
 end
