@@ -1,0 +1,16 @@
+nav.navbar.navbar-inverse.navbar-fixed-top
+  .container
+    .navbar-header
+      button.navbar-toggle.collapsed aria-controls="navbar" aria-expanded="false" data-target="#navbar" data-toggle="collapse" type="button" 
+        span.sr-only Toggle navigation
+        span.icon-bar
+        span.icon-bar
+        span.icon-bar
+      a.navbar-brand href="#"  PMF
+    #navbar.collapse.navbar-collapse
+      ul.nav.navbar-nav.pull-right
+        - if current_user
+          li
+            = link_to "Recipients", recipients_path
+          li
+            = link_to "Sign Out", destroy_user_session_path, method: :delete

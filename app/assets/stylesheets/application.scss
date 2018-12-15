@@ -15,4 +15,14 @@
  *= require_self
  */
 
+@import "bootstrap_overrides";
+@import "bootstrap-sprockets";
 @import "bootstrap";
+
+body {
+  margin-top: 130px;
+}
+
+.table-column.table-column--small {
+  max-width: 100px;
+}

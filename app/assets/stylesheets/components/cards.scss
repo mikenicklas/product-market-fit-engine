@@ -1,0 +1,19 @@
+.card {
+  padding: 48px;
+  border-radius: 6px;
+  background-color: #fff;
+  box-shadow: 0 5px 10px rgba(0,0,0,.05);
+
+  &.card--md {
+    max-width: 600px;
+    margin: auto;
+  }
+}
+
+.card__header {
+  margin-top: 0;
+}
+
+.card__header-container {
+  margin-bottom: 24px;
+}
