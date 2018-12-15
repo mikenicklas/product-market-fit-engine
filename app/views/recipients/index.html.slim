@@ -23,4 +23,4 @@ h1 Recipients
           td = recipient.status.to_s.titleize
           td
             - if recipient.completed?
-              = link_to "View response", survey_response_path(recipient.response)
+              = link_to "View response", "survey_response_path(recipient.response)"

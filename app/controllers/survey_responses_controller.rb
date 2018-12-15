@@ -8,6 +8,7 @@ class SurveyResponsesController < ApplicationController
   def create
     @survey_response = @recipient.survey_responses.new(survey_params)
     if @survey_response.save
+      @recipient.update(completed_survey_at: Time.zone.now)
       redirect_to survey_response_thanks_path(token: params[:token])
     else
       binding.pry
