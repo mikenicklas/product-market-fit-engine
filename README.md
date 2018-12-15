@@ -1,24 +1,3 @@
-# README
+# Product Market Fit Engine
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+This is directly inspired by Rahul Vohra's [talk on finding & refining product market fit](https://businessofsoftware.org/2018/11/product-market-fit-engine-rahul-vohra-ceo-superhuman/). The goal of this project is to make this type of instrumentation easy for small/mid size businesses.
