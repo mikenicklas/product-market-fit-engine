@@ -1,5 +1,6 @@
 class Recipient < ApplicationRecord
   belongs_to :product
+  has_many :survey_responses
 
   before_save :set_survey_token
 
