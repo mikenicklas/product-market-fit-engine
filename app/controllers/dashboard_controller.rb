@@ -1,5 +1,4 @@
-class DashboardController < ApplicationController
-  before_action :authenticate_user!, :force_onboarding
+class DashboardController < BaseController
 
   def index
   end

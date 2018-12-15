@@ -1,5 +1,5 @@
-class ProductsController < ApplicationController
-  before_action :authenticate_user!
+class ProductsController < BaseController
+  skip_before_action :force_onboarding
 
   def new
     @product = current_user.build_product
