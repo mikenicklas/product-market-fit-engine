@@ -1,5 +1,8 @@
-= bootstrap_form_for @recipient do |f|
-  = f.text_field :first_name
-  = f.text_field :last_name
-  = f.email_field :email
-  = f.submit "Create recipient", class: "btn btn-primary"
+.card.card--md
+  .card__header-container
+    h1.card__header Add a recipient
+  = bootstrap_form_for @recipient do |f|
+    = f.text_field :first_name
+    = f.text_field :last_name
+    = f.email_field :email
+    = f.submit "Create recipient", class: "btn btn-primary"
