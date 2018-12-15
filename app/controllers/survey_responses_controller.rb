@@ -11,7 +11,6 @@ class SurveyResponsesController < ApplicationController
       @recipient.update(completed_survey_at: Time.zone.now)
       redirect_to survey_response_thanks_path(token: params[:token])
     else
-      binding.pry
       render :new, flash: { error: "Sorry your survey response could not be processed." }
     end
   end
