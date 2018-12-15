@@ -8,6 +8,11 @@
     max-width: 600px;
     margin: auto;
   }
+
+  &.card--sm {
+    max-width: 480px;
+    margin: auto;
+  }
 }
 
 .card__header {
