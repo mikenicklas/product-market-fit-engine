@@ -1,0 +1,8 @@
+h1 Onboarding
+
+= bootstrap_form_for @product do |f|
+  = f.text_field :name
+  = f.url_field :logo_url
+  = f.email_field :public_contact_email
+  = f.url_field :site_url
+  = f.submit "Complete setup", class: "btn btn-primary"
