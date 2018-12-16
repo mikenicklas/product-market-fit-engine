@@ -9,7 +9,7 @@ import Vue from 'vue'
 import App from '../dashboard.vue'
 
 document.addEventListener('DOMContentLoaded', () => {
-  const el = document.getElementById("app")
+  const el = document.getElementById("dashboard-charts")
   const app = new Vue({
     el,
     render: h => h(App)

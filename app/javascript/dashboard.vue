@@ -40,7 +40,7 @@ export default {
   data() {
     return {
       responses: window.surveyResponses,
-      currentSegment: null
+      currentSegment: {type: "very_disappointed", label: "Very disappointed"}
     }
   },
   computed: {

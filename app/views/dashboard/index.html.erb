@@ -1,4 +1,4 @@
-<div id="app"></div>
+<div id="dashboard-charts"></div>
 
 <script>
   window.surveyResponses = <%= @survey_responses.to_json.html_safe %>;
@@ -6,4 +6,4 @@
 </script>
 
 <%= javascript_pack_tag "dashboard" %>
-<%= stylesheet_pack_tag 'dashboard' %> 
+<%= stylesheet_pack_tag 'dashboard' %>
