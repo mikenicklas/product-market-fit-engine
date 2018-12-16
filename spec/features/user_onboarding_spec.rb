@@ -13,6 +13,6 @@ RSpec.feature "UserOnboardings", type: :feature do
     fill_in "product[public_contact_email]", with: "contact@pmfit.com"
     fill_in "product[logo_url]", with: "https://s3.amazon.com/bucket/pmfit.png"
     click_on "Complete setup"
-    expect(page).to have_content "Dashboard"
+    expect(page).to have_content "Your account has been setup!"
   end
 end
