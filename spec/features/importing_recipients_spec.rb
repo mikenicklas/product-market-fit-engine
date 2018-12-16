@@ -10,6 +10,7 @@ RSpec.feature "ImportingRecipients", type: :feature do
 
   it "can add new recipients" do
     visit root_path
+    click_on "Recipients"
     click_on "Add recipient"
     fill_in "recipient[email]", with: "a.recipient@gmail.com"
     fill_in "recipient[first_name]", with: "John"

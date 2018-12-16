@@ -9,6 +9,7 @@ class SurveyResponsesController < ApplicationController
     @survey_response = @recipient.survey_responses.new(survey_params)
     if @survey_response.save
       @recipient.update(completed_survey_at: Time.zone.now)
+      UpdateWordCloudService.call(product: @recipient.product)
       redirect_to survey_response_thanks_path(token: params[:token])
     else
       render :new, flash: { error: "Sorry your survey response could not be processed." }

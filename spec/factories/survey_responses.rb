@@ -1,10 +1,11 @@
 FactoryBot.define do
   factory :survey_response do
-    recipient_id { 1 }
-    product_id { 1 }
-    disappointment { 1 }
-    ideal_customer { 1 }
-    main_benefits { "MyText" }
-    recommended_improvements { "MyText" }
+    disappointment 0
+    ideal_customer "someone who doesnt have a lot of time"
+    main_benefits "it is easy to use and its cheap"
+    recommended_improvements "I think it should be faster"
+
+    recipient
+    product
   end
 end

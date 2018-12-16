@@ -25,6 +25,9 @@ export default {
       },
       chartoptions: {
         responsive: false,
+        animation: {
+          duration: 0
+        },
         onClick: function(evt, f) {
           const dataIndex = f[0]._chart.tooltip._active[0]._index;
           const segment = responseConfig[dataIndex];

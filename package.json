@@ -7,7 +7,8 @@
     "vue": "^2.5.21",
     "vue-chartjs": "^3.4.0",
     "vue-loader": "14.2.2",
-    "vue-template-compiler": "^2.5.21"
+    "vue-template-compiler": "^2.5.21",
+    "vuewordcloud": "^18.7.11"
   },
   "devDependencies": {
     "webpack-dev-server": "2.11.2"
