@@ -1,31 +1,43 @@
 <script>
 import { Pie } from 'vue-chartjs'
 
+const responseConfig = [
+  { type: "very_disappointed", label: "Very disapointed" },
+  { type: "semi_disappointed", label: "Semi disappointed" },
+  { type: "not_disappointed", label: "Not disapointed" }
+];
+
+const responseLabels = responseConfig.map(resType => resType.label);
+
 export default {
   extends: Pie,
-  props: ["responses"],
+  props: ["responses", "currentSegment"],
   data() {
     const self = this;
     return {
       chartdata: {
         datasets: [{
-          labels: ["Very disapointed", "Semi disappointed", "Not disapointed"],
           data: this.formattedResponseCounts(),
           backgroundColor: ["#ffcd56", "#36a2eb", "#ff6384"],
           label: "Product market fit"
         }],
-        labels: ["Very disapointed", "Semi disappointed", "Not disapointed"]
+        labels: responseLabels
       },
-      labels:  ["Very disapointed", "Semi disappointed", "Not disapointed"],
       chartoptions: {
-        responsive: false
+        responsive: false,
+        onClick: function(evt, f) {
+          const dataIndex = f[0]._chart.tooltip._active[0]._index;
+          const segmentType = responseConfig[dataIndex].type;
+          console.log(`updating segment to: ${segmentType}`)
+          self.$emit('update:current-segment', segmentType)
+        }
       }
     }
   },
   methods: {
     formattedResponseCounts: function() {
-      return ["very_disappointed", "semi_disappointed", "not_disappointed"].map((type) => {
-        return this.formattedResponseCount(type)
+      return responseConfig.map(responseType => {
+        return this.formattedResponseCount(responseType.type)
       });
     },
     formattedResponseCount: function(type) {
