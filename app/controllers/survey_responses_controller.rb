@@ -23,6 +23,6 @@ class SurveyResponsesController < ApplicationController
 
   def survey_params
     params.require(:survey_response).permit(:disappointment, :main_benefits,
-      :ideal_customer, :recommened_improvements).merge(product_id: @recipient.product.id)
+      :ideal_customer, :recommended_improvements).merge!(product_id: @recipient.product.id)
   end
 end
