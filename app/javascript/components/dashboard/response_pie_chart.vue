@@ -1,5 +1,5 @@
 <script>
-import { Pie } from 'vue-chartjs'
+import { Doughnut } from 'vue-chartjs'
 
 const responseConfig = [
   { type: "very_disappointed", label: "Very disapointed" },
@@ -10,7 +10,7 @@ const responseConfig = [
 const responseLabels = responseConfig.map(resType => resType.label);
 
 export default {
-  extends: Pie,
+  extends: Doughnut,
   props: ["responses", "currentSegment"],
   data() {
     const self = this;
@@ -27,9 +27,8 @@ export default {
         responsive: false,
         onClick: function(evt, f) {
           const dataIndex = f[0]._chart.tooltip._active[0]._index;
-          const segmentType = responseConfig[dataIndex].type;
-          console.log(`updating segment to: ${segmentType}`)
-          self.$emit('update:current-segment', segmentType)
+          const segment = responseConfig[dataIndex];
+          self.$emit('update:current-segment', segment)
         }
       }
     }
