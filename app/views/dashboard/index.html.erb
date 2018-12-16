@@ -1,0 +1,16 @@
+<div class="card">
+
+  <div class="card__header-container">
+    <h1 class="pull-left card__header">Dashboard</h1>
+    <%= link_to "Add recipient", new_recipient_path, class: "btn btn-primary pull-right" %>
+    <div class="clearfix"></div>
+  </div>
+
+  <div id="app"></div>
+</div>
+
+<script>
+  window.surveyResponses = <%= @survey_responses.to_json.html_safe %>;
+</script>
+
+<%= javascript_pack_tag "dashboard" %>
