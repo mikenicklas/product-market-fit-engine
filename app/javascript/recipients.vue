@@ -28,10 +28,10 @@
         </tbody>
       </table>
     </div>
-    <div class="footer-action" v-if="selectedRecipients.length > 0">
+    <div class="footer-action" :class="{'footer-action--visible': selectedRecipients.length > 0}">
       <div class="container">
         <span class="footer-action__description pull-left">{{selectedRecipientText}}</span>
-        <input type="submit" class="btn btn-primary footer-action__button pull-right" @click="sendForm">Send surveys</button>
+        <button class="btn btn-primary footer-action__button pull-right" @click="sendForm">Send surveys</button>
       </div>
     </div>
   </div>
@@ -53,6 +53,10 @@ export default {
     selectedRecipientText: function() {
       const sr = this.selectedRecipients;
       const count = sr.length;
+
+      if(count == 0)
+        return;
+
       const base = `Send surveys to ${sr[0].first_name} ${sr[0].last_name}`;
 
       if(count > 1) {
@@ -65,8 +69,8 @@ export default {
   methods: {
     sendForm: function() {
       const form = document.getElementById("send-survey-form")
-      const ids = document.getElementById("send_survey_ids");
-      ids.value = this.selectedRecipients.map(rec => rec.id)
+      const hiddenField = document.getElementById("send_survey_ids");
+      hiddenField.value = this.selectedRecipients.map(rec => rec.id)
       form.submit();
     }
   }
@@ -80,12 +84,19 @@ export default {
 
   .footer-action {
     position: fixed;
-    bottom: 0;
+    bottom: -50px;
     left: 0;
     width: 100%;
     background-color: #21C798;
     padding: 30px;
     color: #fff;
+    transition: .3s ease all;
+    opacity: 0;
+  }
+
+  .footer-action--visible {
+    bottom: 0;
+    opacity: 1;
   }
 
   .footer-action__button {

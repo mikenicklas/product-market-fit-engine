@@ -13,3 +13,18 @@
 //= require rails-ujs
 //= require activestorage
 //= require_tree .
+
+document.addEventListener("DOMContentLoaded", function() {
+  var alertCloseButtons = document.getElementsByClassName('alert__close')
+
+  for(var i = 0; i < alertCloseButtons.length; i++) {
+    alertCloseButtons[i].addEventListener("click", function(e) {
+      var current = e.target;
+      current.parentNode.classList.remove('in')
+      setTimeout(function() {
+        current.parentNode.classList.remove();
+      }, 400)
+    })
+  }
+
+})

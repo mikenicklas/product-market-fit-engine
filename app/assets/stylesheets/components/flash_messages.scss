@@ -1,0 +1,22 @@
+#flash-messages {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  max-width: 500px;
+  width: 90%;
+
+  .alert-success {
+    background-color: #2aca9d;
+    border-radius: 6px;
+    color: #fff;
+    box-shadow: 0 5px 10px rgba(0,0,0,.05);
+  }
+
+  .alert-danger,
+  .alert-error {
+    background-color: #ca2a5e;
+    border-radius: 6px;
+    color: #fff;
+    box-shadow: 0 5px 10px rgba(0,0,0,.05);
+  }
+}
