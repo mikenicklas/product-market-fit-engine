@@ -1,9 +1,11 @@
 <template>
   <div class="text-left">
-    <h3 class="u-fw--semi">
-      <span class="u-c--light-gray">Segments</span>: <span class="u-c--dark-gray">{{currentSegment.label}}</span>
-    </h3>
-    <p>{{description}}</p>
+    <div class="card__header-container">
+      <h3 class="u-fw--semi card__header">
+        <span class="u-c--light-gray">Segments</span>: <span class="u-c--dark-gray">{{currentSegment.label}}</span>
+      </h3>
+      <p>{{description}}</p>
+    </div>
 
     <div class="row u-mt--4 text-center">
       <div class="col-sm-6">

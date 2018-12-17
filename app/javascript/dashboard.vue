@@ -6,7 +6,7 @@
         <p class="score__title">Product Market Fit Score</p>
       </div>
 
-      <div class="card u-mt--1">
+      <div class="card u-mt--2">
         <ResponsePieChart
           :current-segment="currentSegment"
           :responses="responses"
