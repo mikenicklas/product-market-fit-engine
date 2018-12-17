@@ -1,0 +1,16 @@
+<div id="recipients-app"></div>
+
+<%= bootstrap_form_tag url: survey_batches_path, method: :post, html: { id: "send-survey-form" } do |f| %>
+  <%= f.hidden_field :send_survey_ids %>
+<% end %>
+
+<script>
+  window.recipients = <%= @recipients.as_json(only: [:id, :first_name, :last_name, :email], methods: [:status]).to_json.html_safe %>
+  window.routes = {
+    new_recipient_path: "<%= new_recipient_path %>",
+    survey_batches_path: "<%= survey_batches_path %>"
+  }
+</script>
+
+<%= javascript_pack_tag "recipients" %>
+<%= stylesheet_pack_tag "recipients" %>

@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.feature "ImportingRecipients", type: :feature do
+RSpec.feature "ImportingRecipients", type: :feature, js: true do
   let(:user) { create(:user) }
 
   before do

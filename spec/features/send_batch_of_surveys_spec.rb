@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.feature "SendBatchOfSurveys", type: :feature do
+RSpec.feature "SendBatchOfSurveys", type: :feature, js: true do
   let(:user) { create(:user) }
   let!(:product) { create(:product, user: user) }
   let!(:recipients) { create_list(:recipient, 10, product: product) }

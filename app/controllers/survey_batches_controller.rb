@@ -15,7 +15,7 @@ class SurveyBatchesController < BaseController
   def recipients_to_send_to
     @recipients_to_send_to ||= begin
       if params[:send_survey_ids].present?
-        params[:send_survey_ids].map(&:to_i)
+        params[:send_survey_ids].split(',').map(&:to_i)
       else
         []
       end
