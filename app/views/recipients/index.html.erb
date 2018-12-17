@@ -5,7 +5,7 @@
 <% end %>
 
 <script>
-  window.recipients = <%= @recipients.as_json(only: [:id, :first_name, :last_name, :email], methods: [:status]).to_json.html_safe %>
+  window.recipients = <%= @recipients.html_safe %>
   window.routes = {
     new_recipient_path: "<%= new_recipient_path %>",
     survey_batches_path: "<%= survey_batches_path %>"

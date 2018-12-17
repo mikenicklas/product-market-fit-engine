@@ -14,7 +14,8 @@ class RecipientsController < BaseController
   end
 
   def index
-    @recipients = current_product.recipients
+    @recipients = current_product.recipients.as_json(only: [:id, :first_name, :last_name, :email],
+      methods: [:status], include: {survey_responses: { only: [:disappointment, :main_benefits, :recommended_improvements, :ideal_customer] }}).to_json
   end
 
   private

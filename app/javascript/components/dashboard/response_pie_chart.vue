@@ -2,7 +2,7 @@
 import { Doughnut } from 'vue-chartjs'
 
 const responseConfig = [
-  { type: "very_disappointed", label: "Very disapointed" },
+  { type: "very_disappointed", label: "Very disappointed" },
   { type: "semi_disappointed", label: "Semi disappointed" },
   { type: "not_disappointed", label: "Not disapointed" }
 ];

@@ -1,5 +1,6 @@
 <template>
   <div>
+    <RecipientDetails v-if="activeRecipient" :recipient="activeRecipient" @resetActiveRecipient="activeRecipient = null" />
     <div class="card">
       <div class="card__header-container">
         <h1 class="pull-left card__header">Recipients</h1>
@@ -23,7 +24,10 @@
             <td>{{recipient.first_name}}</td>
             <td>{{recipient.last_name}}</td>
             <td>{{recipient.email}}</td>
-            <td>{{recipient.status}}</td>
+            <td>
+              <a nohref v-if="recipient.status == 'completed'" @click="activeRecipient = recipient">Completed</a>
+              <span v-else>{{recipient.status}}</span>
+            </td>
           </tr>
         </tbody>
       </table>
@@ -38,12 +42,18 @@
 </template>
 
 <script>
+import RecipientDetails from './components/recipients/recipient_details.vue'
+
 export default {
+  components: {
+    RecipientDetails
+  },
   data() {
     return {
       recipients: window.recipients,
       new_recipient_path: window.routes.new_recipient_path,
-      survey_batches_path: window.routes.survey_batches_path
+      survey_batches_path: window.routes.survey_batches_path,
+      activeRecipient: null
     }
   },
   computed: {
