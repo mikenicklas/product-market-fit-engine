@@ -26,6 +26,7 @@ group :development, :test do
   gem 'factory_bot_rails'
   gem 'pry-rails'
   gem 'dotenv-rails'
+  gem 'guard-rspec', require: false
 end
 
 group :development do
