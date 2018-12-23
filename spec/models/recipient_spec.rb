@@ -10,6 +10,13 @@ RSpec.describe Recipient, type: :model do
     expect(recipient.survey_token).not_to eql original_token
   end
 
+  it "email should be unique to product", aggregate_failures: true do
+    dup_email_recipient = build(:recipient, email: recipient.email, product: recipient.product)
+    expect(dup_email_recipient).to be_invalid
+    dup_email_recipient.product = create(:product)
+    expect(dup_email_recipient).to be_valid
+  end
+
   describe "#status" do
     let(:recipient) { create(:recipient, sent_survey_at: sent_survey_at, completed_survey_at: completed_survey_at) }
 

@@ -5,6 +5,8 @@ class Recipient < ApplicationRecord
 
   before_save :set_survey_token
 
+  validates :email, uniqueness: { scope: :product_id }
+
   def status
     return :completed if completed?
     return :sent if sent?
