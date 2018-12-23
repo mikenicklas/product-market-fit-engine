@@ -1,6 +1,7 @@
 class Recipient < ApplicationRecord
   belongs_to :product
   has_many :survey_responses
+  has_one :enrichment
 
   before_save :set_survey_token
 

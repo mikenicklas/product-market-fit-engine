@@ -16,6 +16,8 @@ gem 'bootstrap-sass'
 gem 'slim-rails'
 gem 'devise'
 gem 'bootstrap_form'
+gem 'sidekiq'
+gem 'fullcontact'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
@@ -23,6 +25,7 @@ group :development, :test do
   gem 'capybara'
   gem 'factory_bot_rails'
   gem 'pry-rails'
+  gem 'dotenv-rails'
 end
 
 group :development do
